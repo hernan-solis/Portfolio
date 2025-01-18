@@ -27,7 +27,7 @@ body {
 
 /* Estilo inicial del título */
 .navbar-brand {
-    color: transparent;
+    color: white;
     transition: color 0.3s ease;
 }
 
@@ -55,12 +55,15 @@ body {
     color: var(--dark-color);
 }
 
-/* Color del título después del scroll */
+/* Color del título después del scroll visited*/
 .navbar.navbar-shrink .navbar-brand:visited {
     color: transparent;
 }
 
-
+/* Color del título después del scroll visited color de fondo de la imagen*/
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: #0F0F11; 
+}
 
 /* Color del links top antes scroll */
 .navbar-light .navbar-nav .nav-link {
