@@ -17,18 +17,90 @@ body {
     padding: 1rem 2rem;
 }
 
-.navbar-light .navbar-nav .nav-link {
+
+/* Cambios al hacer scroll */
+.navbar.navbar-shrink {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 2rem;
+}
+
+/* Estilo inicial del título */
+.navbar-brand {
+    color: transparent;
+    transition: color 0.3s ease;
+}
+
+/* Estilo inicial del título y visitado*/
+.navbar-brand:visited {
+    color: transparent;
+    transition: color 0.3s ease;
+}
+
+/* Estilo inicial del título y focus*/
+.navbar-brand:focus {
+    color: transparent;
+    transition: color 0.3s ease;
+}
+
+/* Estilo inicial del título hover*/
+.navbar-brand:hover {
+    color: transparent;
+    transition: color 0.3s ease;
+}
+
+
+/* Color del título después del scroll */
+.navbar.navbar-shrink .navbar-brand {
     color: var(--dark-color);
 }
 
+/* Color del título después del scroll */
+.navbar.navbar-shrink .navbar-brand:visited {
+    color: transparent;
+}
+
+
+
+/* Color del links top antes scroll */
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+/* Color del links top antes scroll y visitado*/
+.navbar-light .navbar-nav .nav-link:visited {
+    color: white;
+}
+
+/* Color del links top antes scroll y focus*/
+.navbar-light .navbar-nav .nav-link:focus {
+    color: white;
+}
+
+/* Color del links top despues scroll */
+.navbar.navbar-shrink .nav-link {
+    color: black;
+}
+
+/* Color del links top despues scroll y visitado */
+.navbar.navbar-shrink .nav-link:visited {
+    color: black;
+}
+
+/* Color del links top despues scroll y focus */
+.navbar.navbar-shrink .nav-link:focus {
+    color: black;
+}
+
+/* Color del links al pasar sobre azul */
 .navbar-light .navbar-nav .nav-link:hover {
     color: var(--primary-color);
 }
 
-.navbar.navbar-shrink {
-    background-color: rgba(255, 255, 255, 0.95) !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
-    padding: 0.5rem 2rem;
+.navbar-light .navbar-brand{
+
+    color: transparent;
 }
 
 .hero {
@@ -44,26 +116,17 @@ body {
     justify-content: center;
     text-align: center;
 }
-.hero {
-    height: 100vh;
-    min-height: 500px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: white;
-}
 
 .hero h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .btn-primary {
@@ -92,7 +155,7 @@ body {
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project-card .card-img-top {
@@ -116,6 +179,7 @@ body {
     overflow: hidden;
 }
 
+/* barra de skill */
 .progress-bar {
     background-color: var(--primary-color);
     transition: width 1s ease;
@@ -187,7 +251,7 @@ footer {
 }
 
 [data-aos="zoom-in"] {
-    transform: scale(.9);
+    transform: scale(0.9);
 }
 
 [data-aos].aos-animate {
