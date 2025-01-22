@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       // Enviar los datos usando fetch
-      fetch("https://formspree.io/f/mjkgbngy", {
+      fetch("https://formsubmit.co/hernansolis94@icloud.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -162,5 +162,5 @@ document.addEventListener("DOMContentLoaded", function () {
     const regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     return regex.test(email);
   }
-  
+
 });
