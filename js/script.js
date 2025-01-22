@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       // Enviar los datos usando fetch
-      fetch("https://formsubmit.co/hernansolis94@icloud.com", {
+      fetch("https://formspree.io/f/mjkgbngy", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
