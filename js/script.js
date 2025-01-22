@@ -97,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Validación del formulario de contacto
   const contactForm = document.getElementById("contactForm");
+
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -120,9 +121,39 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // Si todas las validaciones son exitosas, permite el envío
-      alert(`Gracias por tu mensaje, ${nombre}. Te contactaremos pronto.`);
-      contactForm.submit(); // Enviar formulario
+      // Crear los datos del formulario
+      const formData = {
+        Nombre: nombre,
+        Email: email,
+        Mensaje: mensaje,
+      };
+
+      // Enviar los datos usando fetch
+      fetch("https://formspree.io/f/mjkgbngy", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert(
+              `Gracias por tu mensaje, ${nombre}. Te contactaremos pronto.`
+            );
+            contactForm.reset(); // Limpiar el formulario
+          } else {
+            alert(
+              "Hubo un error al enviar el formulario. Por favor, intenta nuevamente."
+            );
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert(
+            "Hubo un error al enviar el formulario. Por favor, intenta nuevamente."
+          );
+        });
     });
   }
 
@@ -131,7 +162,5 @@ document.addEventListener("DOMContentLoaded", function () {
     const regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     return regex.test(email);
   }
-
   
-
 });
