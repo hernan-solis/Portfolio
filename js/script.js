@@ -120,8 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
+      // Si todas las validaciones son exitosas, permite el envío
       alert(`Gracias por tu mensaje, ${nombre}. Te contactaremos pronto.`);
-      contactForm.reset();
+      contactForm.submit(); // Enviar formulario
     });
   }
 
