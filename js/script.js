@@ -164,3 +164,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
+// Función para abrir el modal con video de YouTube
+function openVideoModal(videoId) {
+  // Construir la URL del video con autoplay
+  const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+  
+  // Asignar la URL al iframe
+  document.getElementById('youtubeVideo').src = videoUrl;
+  
+  // Mostrar el modal
+  $('#videoModal').modal('show');
+}
+
+// Limpiar el video cuando se cierra el modal
+$('#videoModal').on('hidden.bs.modal', function () {
+  document.getElementById('youtubeVideo').src = '';
+});
