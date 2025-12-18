@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Hernán Solis - .NET Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Estilos base del documento */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+
+        /* Configuración para la generación de PDF a medida A4 */
+        @media print {
+            body {
+                background-color: white;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .no-print {
+                display: none;
+            }
+            .page-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                width: 100% !important;
+                padding: 0 !important;
+                display: grid !important;
+                grid-template-columns: 280px 1fr !important;
+                height: 297mm !important; 
+                overflow: hidden !important;
+            }
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            .sidebar a {
+                color: white !important;
+                text-decoration: none !important;
+            }
+            .main-content a {
+                color: #1e293b !important;
+                text-decoration: none !important;
+            }
+            .sidebar {
+                background-color: #0f172a !important;
+                color: white !important;
+            }
+        }
+
+        .page-container {
+            width: 210mm;
+            min-height: 297mm;
+            background: white;
+            margin: 20px auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 280px 1fr;
+        }
+
+        .sidebar {
+            background-color: #0f172a;
+            color: white;
+            padding: 22px 18px; 
+        }
+
+        .main-content {
+            padding: 25px 35px; 
+        }
+
+        .section-title {
+            border-bottom: 2px solid #10b981;
+            padding-bottom: 4px;
+            margin-bottom: 8px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .sidebar .section-title {
+            color: #10b981;
+            border-bottom-color: #334155;
+            font-size: 0.75rem;
+        }
+
+        .skill-badge {
+            background: #334155;
+            color: #f8fafc;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 0.68rem;
+            display: inline-block;
+            margin: 1px;
+        }
+
+        .experience-item {
+            margin-bottom: 15px; 
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 5px;
+            bottom: -15px;
+            width: 1px;
+            background: #e2e8f0;
+        }
+
+        .experience-dot {
+            position: absolute;
+            left: -19px;
+            top: 7px;
+            width: 9px;
+            height: 9px;
+            background: #10b981;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print text-center py-4">
+        <button onclick="window.print()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition duration-300">
+            <i class="fa-solid fa-download mr-2"></i> Generar PDF para enviar
+        </button>
+    </div>
+
+    <div class="page-container" id="cv">
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar">
+            <div class="text-center mb-5">
+                <div class="w-32 h-32 bg-slate-800 rounded-full mx-auto mb-3 border-4 border-emerald-500 overflow-hidden shadow-xl flex items-center justify-center">
+                    <img src="assets/img/imgFotoPerfilEditado.png" alt="Foto de perfil de Hernán Solis" 
+                         class="w-full h-full object-cover"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <i class="fa-solid fa-user-tie text-5xl text-slate-400 hidden"></i>
+                </div>
+                <h1 class="text-xl font-bold leading-tight">Hernán Solis</h1>
+                <p class="text-emerald-400 font-medium mt-1 uppercase text-[10px] tracking-widest">Desarrollador .NET Jr.</p>
+            </div>
+
+            <div class="mb-4">
+                <h2 class="section-title">Contacto</h2>
+                <ul class="space-y-1.5 text-[10px]">
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-envelope w-4 text-emerald-500 text-center"></i>
+                        <a href="mailto:hernansolis94@icloud.com" class="hover:text-emerald-400 transition-colors">hernansolis94@icloud.com</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-globe w-4 text-emerald-500 text-center"></i>
+                        <a href="https://hernansolis.com" target="_blank" class="hover:text-emerald-400 transition-colors">hernansolis.com</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-brands fa-linkedin w-4 text-emerald-500 text-center"></i>
+                        <a href="https://www.linkedin.com/in/hernan-solis/" target="_blank" class="hover:text-emerald-400 transition-colors">in/hernan-solis</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-brands fa-github w-4 text-emerald-500 text-center"></i>
+                        <a href="https://github.com/hernan-solis" target="_blank" class="hover:text-emerald-400 transition-colors">github.com/hernan-solis</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot w-4 text-emerald-500 text-center"></i>
+                        <span>Buenos Aires, Argentina</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mb-4">
+                <h2 class="section-title">Habilidades Backend</h2>
+                <div class="flex flex-wrap">
+                    <span class="skill-badge">C# / .NET</span>
+                    <span class="skill-badge">ASP.NET</span>
+                    <span class="skill-badge">Web Forms</span>
+                    <span class="skill-badge">Entity Framework ORM</span>
+                    <span class="skill-badge">ADO.NET</span>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <h2 class="section-title">Base de Datos</h2>
+                <div class="flex flex-wrap">
+                    <span class="skill-badge">SQL Server</span>
+                    <span class="skill-badge">Triggers</span>
+                    <span class="skill-badge">Vistas</span>
+                    <span class="skill-badge">Store Procedures</span>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <h2 class="section-title">Frontend & Web</h2>
+                <div class="flex flex-wrap">
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">HTML5</span>
+                    <span class="skill-badge">CSS</span>
+                    <span class="skill-badge">Bootstrap</span>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <h2 class="section-title">Formación</h2>
+                <div class="space-y-2">
+                    <div>
+                        <h4 class="font-bold text-emerald-400 text-[9px] leading-tight mb-0.5 uppercase">Tec. Univ. en Programación</h4>
+                        <p class="text-[9px] text-slate-100 font-medium">UTN FRGP</p>
+                        <p class="text-[8px] text-emerald-500 font-bold italic">Último cuatrimestre</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-2">
+                <h2 class="section-title">Idiomas</h2>
+                <p class="text-[10px]">Inglés: Técnico (Lectura)</p>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            <!-- Perfil Profesional -->
+            <section class="mb-6">
+                <h2 class="section-title text-lg">Perfil Profesional</h2>
+                <p class="text-[11px] text-slate-600 leading-relaxed text-justify">
+                    Desarrollador apasionado por el ecosistema .NET con sólida base en SQL Server. Actualmente cursando el último cuatrimestre de la Tecnicatura en Programación en la <strong>UTN FRGP</strong>. Mi trayectoria de más de 8 años en <strong>Expreso Tronador S.A.</strong> avala mi compromiso, capacidad de resolución de problemas y adaptabilidad. Poseo una fuerte orientación al trabajo en equipo, valorando la colaboración y la comunicación asertiva como pilares fundamentales para el éxito de los proyectos. Mi enfoque híbrido me permite entender procesos logísticos y financieros complejos para transformarlos en soluciones tecnológicas eficientes, priorizando la arquitectura limpia y la integridad de datos.
+                </p>
+            </section>
+
+            <!-- Proyectos y logros técnicos -->
+            <section class="mb-6">
+                <h2 class="section-title text-lg">Proyectos & Logros Técnicos</h2>
+                <div class="space-y-2">
+                    <div class="bg-slate-50 p-3 border-l-4 border-emerald-500 rounded-r-md">
+                        <div class="flex justify-between items-start mb-1">
+                            <h4 class="font-bold text-slate-800 text-xs">EntrenApp - Gestor de Gimnasio Web</h4>
+                            <span class="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">ASP.NET | SQL | Web Forms</span>
+                        </div>
+                        <p class="text-[10px] text-slate-600 leading-snug">Sistema integral para la gestión de socios y rutinas. Implementación de capas de negocio en C# y persistencia de datos relacionales.</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 border-l-4 border-emerald-500 rounded-r-md">
+                        <div class="flex justify-between items-start mb-1">
+                            <h4 class="font-bold text-slate-800 text-xs">Gestor de Catálogo Desktop</h4>
+                            <span class="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">C# .NET | WinForms | ADO.NET</span>
+                        </div>
+                        <p class="text-[10px] text-slate-600 leading-snug">Aplicación de escritorio para la administración de inventario con conexión directa a base de datos SQL Server.</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 border-l-4 border-emerald-500 rounded-r-md">
+                        <div class="flex justify-between items-start mb-1">
+                            <h4 class="font-bold text-slate-800 text-xs">Arquitectura SQL: Triggers & Vistas</h4>
+                            <span class="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">SQL Server | T-SQL</span>
+                        </div>
+                        <p class="text-[10px] text-slate-600 leading-snug">Diseño de triggers para control histórico y lógica de borrado lógico (Soft Delete), junto con vistas optimizadas para reportes unificados.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experiencia Laboral -->
+            <section>
+                <h2 class="section-title text-lg">Experiencia Laboral</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-dot"></div>
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="font-bold text-slate-800 uppercase text-[11px]">Responsable de Pagos y Tesorería</h3>
+                        <span class="text-[9px] font-semibold text-emerald-600 uppercase">Abril 2025 — Actualidad</span>
+                    </div>
+                    <p class="text-[10px] text-slate-400 font-bold mb-1 uppercase tracking-tight">Expreso Tronador S.A.</p>
+                    <ul class="text-[10px] text-slate-600 list-disc ml-4 space-y-1 text-justify leading-snug">
+                        <li>Gestión del ciclo completo de pagos a proveedores y optimización del flujo de caja corporativo.</li>
+                        <li>Liderazgo en conciliaciones bancarias y programación de transferencias de alto impacto.</li>
+                        <li>Automatización de procesos administrativos mediante macros en Excel, logrando una mayor agilidad en el procesamiento de datos y conciliaciones.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-dot"></div>
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="font-bold text-slate-800 uppercase text-[11px]">Coordinador Logístico y Documental</h3>
+                        <span class="text-[9px] font-semibold text-slate-400 uppercase">Junio 2020 — Marzo 2025</span>
+                    </div>
+                    <p class="text-[10px] text-slate-400 font-bold mb-1 uppercase tracking-tight">Expreso Tronador S.A.</p>
+                    <ul class="text-[10px] text-slate-600 list-disc ml-4 space-y-1 text-justify leading-snug">
+                        <li>Supervisión de flota y coordinación estratégica de proveedores logísticos externos.</li>
+                        <li>Gestión de permisos viales complejos y cumplimiento normativo ante entes gubernamentales.</li>
+                        <li>Optimización de carga de datos técnicos en plataformas de grandes clientes.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item" style="margin-bottom: 0;">
+                    <div class="experience-dot"></div>
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="font-bold text-slate-800 uppercase text-[11px]">Administrativo • Data Entry</h3>
+                        <span class="text-[9px] font-semibold text-slate-400 uppercase">Mayo 2017 — Junio 2020</span>
+                    </div>
+                    <p class="text-[10px] text-slate-400 font-bold mb-1 uppercase tracking-tight">Expreso Tronador S.A.</p>
+                    <ul class="text-[10px] text-slate-600 list-disc ml-4 space-y-1 text-justify leading-snug">
+                        <li>Registro contable y control de facturación operativa de gastos de flota.</li>
+                        <li>Desarrollo de dashboards en Excel para control presupuestario de viáticos y combustible.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
